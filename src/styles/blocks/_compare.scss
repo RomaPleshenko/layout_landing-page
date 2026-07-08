@@ -1,0 +1,60 @@
+@use '../utils' as *;
+
+.compare {
+  padding-bottom: 56px;
+
+  @include on-desktop {
+    padding-bottom: 90px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+
+    @include on-desktop {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+  }
+}
+
+.bike {
+  &__photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 24px;
+
+    img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 20px;
+    color: $color-white;
+    margin-bottom: 12px;
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 1.6;
+    color: $color-text;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 18px;
+    color: $color-white;
+  }
+}

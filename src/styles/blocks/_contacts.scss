@@ -1,0 +1,95 @@
+@use '../utils' as *;
+
+.contacts {
+  padding-bottom: 56px;
+
+  @include on-desktop {
+    padding-bottom: 90px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 60px;
+      align-items: start;
+    }
+  }
+
+  &__info {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 13px;
+    color: $color-muted;
+  }
+
+  &__value {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $color-white;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+// ---- pill form ----
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 460px;
+
+  &__input {
+    width: 100%;
+    padding: 16px 24px;
+
+    font-size: 15px;
+    color: $color-white;
+    background: transparent;
+    border: 1px solid $color-border;
+    border-radius: 40px;
+    transition: border-color $transition;
+
+    &::placeholder {
+      color: $color-muted;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-white;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 140px;
+    border-radius: 20px;
+  }
+
+  &__submit {
+    align-self: stretch;
+    margin-top: 8px;
+  }
+}

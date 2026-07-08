@@ -1,0 +1,14 @@
+@use '../utils' as *;
+
+.footer {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 420px;
+
+    @include on-desktop {
+      max-height: 520px;
+    }
+  }
+}

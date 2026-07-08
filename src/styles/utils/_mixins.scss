@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+// --- Media query helpers (mobile-first) ---
+@mixin on-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin on-wide {
+  @media (min-width: $wide) {
+    @content;
+  }
+}
+
+// --- Keep an element at a fixed aspect ratio ---
+@mixin aspect-ratio($ratio: 100%) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: $ratio;
+  }
+
+  & > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// --- Cover image inside a box ---
+@mixin cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

@@ -1,0 +1,121 @@
+@use 'utils' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-main;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text;
+  background-color: $color-bg;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid $color-white;
+  outline-offset: 3px;
+}
+
+// ---------- Layout helpers ----------
+.container {
+  width: 100%;
+  max-width: calc(#{$container} + 2 * 40px);
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include on-tablet {
+    padding: 0 40px;
+  }
+
+  @include on-desktop {
+    padding: 0 60px;
+  }
+}
+
+// ---------- Shared typography ----------
+.section-title {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.2;
+  color: $color-white;
+  text-align: center;
+
+  @include on-desktop {
+    font-size: 40px;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: $color-white;
+
+  &--dark {
+    color: $color-menu-text;
+  }
+}
+
+// ---------- Icon links (header / menu) ----------
+.icon-link {
+  display: inline-block;
+  background: no-repeat center / contain;
+
+  &--phone {
+    width: 22px;
+    height: 22px;
+    background-image: url('../images/icons/phone.svg');
+  }
+  &--burger {
+    width: 28px;
+    height: 20px;
+    background-image: url('../images/icons/menu.svg');
+  }
+  &--close {
+    width: 28px;
+    height: 28px;
+    background-image: url('../images/icons/close.svg');
+  }
+}
