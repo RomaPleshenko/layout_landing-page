@@ -58,7 +58,6 @@ textarea {
   outline-offset: 3px;
 }
 
-// ---------- Layout helpers ----------
 .container {
   width: 100%;
   max-width: calc(#{$container} + 2 * 40px);
@@ -74,7 +73,6 @@ textarea {
   }
 }
 
-// ---------- Shared typography ----------
 .section-title {
   font-weight: 600;
   font-size: 26px;
@@ -98,7 +96,6 @@ textarea {
   }
 }
 
-// ---------- Icon links (header / menu) ----------
 .icon-link {
   display: inline-block;
   background: no-repeat center / contain;
