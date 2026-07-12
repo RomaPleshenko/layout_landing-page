@@ -8,13 +8,14 @@
   padding-bottom: 32px;
 
   background-color: #101010;
-  background-image: url('../images/hero-bike.png');
+  background-image: url('../images/hero-bike-mob.png');
   background-repeat: no-repeat;
-  background-position: center 45%;
+  background-position: center;
   background-size: cover;
 
   @include on-tablet {
     min-height: 640px;
+    background-image: url('../images/hero-bike.png');
   }
 
   @include on-desktop {
@@ -22,7 +23,6 @@
     padding-bottom: 56px;
   }
 
-  // subtle darkening so the header + title stay legible
   &::after {
     content: '';
     position: absolute;
@@ -45,6 +45,8 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 1.1;
+    text-align: center;
+    padding-bottom: 60px;
     color: $color-white;
 
     @include on-tablet {

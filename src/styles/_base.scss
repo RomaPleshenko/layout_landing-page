@@ -100,19 +100,34 @@ textarea {
   display: inline-block;
   background: no-repeat center / contain;
 
+  z-index: 1;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.4, 1);
+  will-change: transform;
+
   &--phone {
-    width: 22px;
-    height: 22px;
-    background-image: url('../images/icons/phone.svg');
+    width: $icon-size;
+    height: $icon-size;
+    background-image: url('../images/icon-phone-call.png');
   }
   &--burger {
-    width: 28px;
-    height: 20px;
-    background-image: url('../images/icons/menu.svg');
+    width: $icon-size;
+    height: $icon-size;
+    background-image: url('../images/icon-burger-menu.png');
+
+    &:hover {
+      width: $icon-size;
+      height: $icon-size;
+      background-image: url('../images/icon-burger-menu-hover.png');
+    }
   }
   &--close {
-    width: 28px;
-    height: 28px;
-    background-image: url('../images/icons/close.svg');
+    width: $icon-size;
+    height: $icon-size;
+    background-image: url('../images/icon-close.png');
+  }
+
+  &:hover {
+    transform: scale(1.5);
+    z-index: 10;
   }
 }

@@ -18,7 +18,7 @@
 
     @include on-tablet {
       grid-template-columns: 1fr 1fr;
-      column-gap: 60px;
+      column-gap: 200px;
       align-items: start;
     }
   }
@@ -54,7 +54,6 @@
   }
 }
 
-// ---- pill form ----
 .form {
   display: flex;
   flex-direction: column;
@@ -66,8 +65,7 @@
     padding: 16px 24px;
 
     font-size: 15px;
-    color: $color-white;
-    background: transparent;
+    background: $color-white;
     border: 1px solid $color-border;
     border-radius: 40px;
     transition: border-color $transition;
