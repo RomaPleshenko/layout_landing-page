@@ -23,6 +23,12 @@
   }
 }
 
+img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
 .bike {
   display: block;
   text-decoration: none;
@@ -47,12 +53,6 @@
     aspect-ratio: 16 / 9;
     margin-bottom: 24px;
     overflow: hidden;
-
-    img {
-      max-height: 100%;
-      width: auto;
-      object-fit: contain;
-    }
   }
 
   &__name {

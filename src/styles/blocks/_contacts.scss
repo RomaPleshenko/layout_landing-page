@@ -18,6 +18,10 @@
 
     @include on-tablet {
       grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+    @include on-desktop {
+      grid-template-columns: 1fr 1fr;
       column-gap: 200px;
       align-items: start;
     }

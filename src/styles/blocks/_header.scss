@@ -24,6 +24,16 @@
     gap: 24px;
   }
 
+  &__logo-img {
+    width: 130px;
+    height: 40px;
+
+    @include on-desktop {
+      width: 185px;
+      height: 55px;
+    }
+  }
+
   .icon-link {
     transition: opacity $transition;
   }

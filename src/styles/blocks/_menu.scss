@@ -4,6 +4,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
+  overflow: hidden;
 
   background-color: $color-menu-bg;
   color: $color-menu-text;
@@ -31,7 +32,7 @@
 
   &__nav {
     margin-top: 56px;
-    flex-grow: 1;
+    margin-bottom: 40px;
   }
 
   &__list {
@@ -41,18 +42,19 @@
   }
 
   &__link {
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 22px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $color-menu-text;
     transition: opacity $transition;
 
+    @include on-tablet {
+      font-weight: 700;
+    }
+
     &:hover {
       opacity: 0.6;
-    }
-    &.is-active {
-      font-weight: 700;
     }
   }
 
