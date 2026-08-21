@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  min-height: 500px;
+  height: 100vh;
   display: flex;
   align-items: flex-end;
   padding-bottom: 32px;
@@ -14,12 +14,11 @@
   background-size: cover;
 
   @include on-tablet {
-    min-height: 640px;
     background-image: url('../images/hero-bike.png');
+    background-position: right center;
   }
 
   @include on-desktop {
-    min-height: 760px;
     padding-bottom: 56px;
   }
 

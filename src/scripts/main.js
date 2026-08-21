@@ -2,49 +2,61 @@
 
 const form = document.querySelector('.form');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const submitBtn = form.querySelector('.form__submit');
+    const submitBtn = form.querySelector('.form__submit');
 
-  submitBtn.disabled = true;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
 
-  form.reset();
-  resetAutofillStyles(form);
-  submitBtn.disabled = false;
-});
+    form.reset();
 
-function resetAutofillStyles(formEl) {
-  const fields = formEl.querySelectorAll('.form__input');
-
-  fields.forEach((field) => {
-    const clone = field.cloneNode(true);
-
-    clone.value = '';
-    field.replaceWith(clone);
+    if (submitBtn) {
+      submitBtn.disabled = false;
+    }
   });
 }
 
 const burgerBtn = document.querySelector('.icon-link--burger');
 const closeBtn = document.querySelector('.icon-link--close');
 const menu = document.querySelector('.menu');
-const body = document.body;
-
-let scrollY = 0;
+const menuLinks = document.querySelectorAll('.menu__link');
 
 function openMenu() {
-  scrollY = window.scrollY;
-  menu.classList.add('menu--open');
-  body.classList.add('no-scroll');
-  body.style.top = `-${scrollY}px`;
+  menu?.classList.add('menu--open');
+  document.body.classList.add('no-scroll');
 }
 
 function closeMenu() {
-  menu.classList.remove('menu--open');
-  body.classList.remove('no-scroll');
-  body.style.top = '';
-  window.scrollTo(0, scrollY);
+  menu?.classList.remove('menu--open');
+  document.body.classList.remove('no-scroll');
 }
 
-burgerBtn.addEventListener('click', openMenu);
-closeBtn.addEventListener('click', closeMenu);
+burgerBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  openMenu();
+});
+
+closeBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeMenu();
+});
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+
+menu?.addEventListener('click', (e) => {
+  if (e.target === menu) {
+    closeMenu();
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menu?.classList.contains('menu--open')) {
+    closeMenu();
+  }
+});

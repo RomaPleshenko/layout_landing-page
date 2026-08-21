@@ -20,6 +20,7 @@
       grid-template-columns: 1fr 1fr;
       column-gap: 24px;
     }
+
     @include on-desktop {
       grid-template-columns: 1fr 1fr;
       column-gap: 200px;
@@ -81,6 +82,18 @@
     &:focus {
       outline: none;
       border-color: $color-white;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $color-text;
+      caret-color: $color-text;
+      box-shadow: 0 0 0 1000px $color-white inset;
+      -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+      transition:
+        background-color 5000s ease-in-out 0s,
+        color 5000s ease-in-out 0s;
     }
   }
 
