@@ -13,3 +13,7 @@ $desktop: 1024px;
 $wide: 1280px;
 $transition: 0.25s ease;
 $icon-size: 24px;
+
+// crosswalk.png's own ratio (2520x1108) — desktop footer height is derived
+// from this instead of a fixed value, so the full image fits with no crop
+$footer-img-ratio: 2520 / 1108;

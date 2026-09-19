@@ -41,3 +41,14 @@
   object-fit: cover;
   object-position: center;
 }
+
+// Fixed height crops the (wider) footer image at the sides on mobile/tablet;
+// on desktop the box switches to the image's own ratio, so it shows in full.
+@mixin footer-frame {
+  height: 420px;
+
+  @include on-desktop {
+    height: auto;
+    aspect-ratio: $footer-img-ratio;
+  }
+}

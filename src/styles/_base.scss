@@ -32,6 +32,12 @@ body.no-scroll {
   width: 100%;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+  background-color: $color-bg;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -122,7 +128,7 @@ textarea {
     background-image: url('../images/icon-phone-call.png');
 
     &::before {
-      content: attr(data-phone);
+      content: none;
       color: #fff;
       position: absolute;
       top: 50%;
@@ -142,8 +148,14 @@ textarea {
       transition: opacity 0.3s ease;
     }
 
-    &:hover::before {
-      opacity: 1;
+    @include on-desktop {
+      &::before {
+        content: attr(data-phone);
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
     }
   }
   &--burger {
